@@ -2,45 +2,46 @@ package com.coolweather.android.db;
 
 import org.litepal.crud.DataSupport;
 
-/**
- * Created by wtx on 2019/8/20.
- */
-
 public class Country extends DataSupport {
-    private int id;
-    private String countryName;
-    private int weatherId;
-    private int cityId;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
+
+    private String countryName;
+
+    private String weatherId;
+
+    private int cityId;
 
     public int getId() {
         return id;
     }
 
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCountryName() {
         return countryName;
     }
 
-    public void setWeatherId(int weatherId) {
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
+
+    public String getWeatherId() {
+        return weatherId;
+    }
+
+    public void setWeatherId(String weatherId) {
         this.weatherId = weatherId;
     }
 
-    public int getWeatherId() {
-        return weatherId;
+    public int getCityId() {
+        return cityId;
     }
 
     public void setCityId(int cityId) {
         this.cityId = cityId;
     }
 
-    public int getCityId() {
-        return cityId;
-    }
 }
