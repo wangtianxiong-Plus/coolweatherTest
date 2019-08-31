@@ -73,7 +73,7 @@ public class ChooseAreaFragment extends Fragment {
                     queryCities();
                 }else if (currentLevel == LEVEL_CITY){
                     selectedCity = cityList.get(position);
-                    queryCountries();
+                    queryCounties();
                 }
             }
         });
@@ -131,7 +131,7 @@ public class ChooseAreaFragment extends Fragment {
     }
 
     /*查询选中市内所有的县，优先从数据库查询，如果没有查询到再到服务器上查询*/
-    private void queryCountries(){
+    private void queryCounties(){
         titleText.setText(selectedCity.getCityName());
         backButton.setVisibility(View.VISIBLE);
         countyList = DataSupport.where("cityid = ?", String.valueOf(selectedCity.getId())).find(County.class);
@@ -163,7 +163,7 @@ public class ChooseAreaFragment extends Fragment {
                     result = Utility.handleProvinceResponse(responseText);
                 }else if ("city".equals(type)){
                     result = Utility.handleCityResponse(responseText, selectedProvince.getId());
-                }else if ("country".equals(type)){
+                }else if ("county".equals(type)){
                     result = Utility.handleCountyResponse(responseText, selectedCity.getId());
                 }
                 if (result){
@@ -175,8 +175,8 @@ public class ChooseAreaFragment extends Fragment {
                                 queryProvinces();
                             }else if ("city".equals(type)){
                                 queryCities();
-                            }else if ("country".equals(type)){
-                                queryCountries();
+                            }else if ("county".equals(type)){
+                                queryCounties();
                             }
                         }
                     });
