@@ -1,10 +1,12 @@
 package com.coolweather.android.db;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Created by wtx on 2019/8/31.
  */
 
-public class Country {
+public class Country extends DataSupport{
     private int id;
 
     private String countryName;
@@ -44,5 +46,6 @@ public class Country {
     public void setCityId(int cityId) {
         this.cityId = cityId;
     }
+
 
 }
