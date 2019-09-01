@@ -10,5 +10,7 @@ public class HttpUtil {
         Request request = new Request.Builder().url(address).build();
         client.newCall(request).enqueue(callback);
     }
+    /*将返回的JSON数据解析成Weather实体类*/
+
 
 }
