@@ -3,7 +3,7 @@
     package="com.coolweather.android">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
         android:name="org.litepal.LitePalApplication"
@@ -19,9 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WeatherActivity"
-            android:exported="true" >
-        </activity>
+        <activity
+            android:name=".WeatherActivity"
+            android:exported="true"></activity>
+
+        <service
+            android:name=".AutoUpdateService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
