@@ -49,7 +49,6 @@ public class WeatherActivity extends AppCompatActivity {
     private String mWeatherId;
     public DrawerLayout drawerLayout;
     private Button navbutton;
-    private ImageView imagePicPhp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +76,6 @@ public class WeatherActivity extends AppCompatActivity {
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navbutton = (Button) findViewById(R.id.nav_button);
-        imagePicPhp = (ImageView) findViewById(R.id.image_php);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString = prefs.getString("weather",null);
         if (weatherString != null){
